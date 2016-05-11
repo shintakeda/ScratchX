@@ -1,3 +1,4 @@
+(function(ext) {
 var descriptor = {
   "blocks": [
     [" ", "%s と言う", "say", "こんにちは!"]
@@ -12,7 +13,9 @@ var ext = {
 };
 
 ScratchExtensions.register("ブロック群のタイトル", descriptor, ext);
+})({});
 
+(function(ext) {
 var descriptor2 = {
   "blocks": [
     [" ", "%s とアラートする", "tell", "こんにちは!"]
@@ -27,3 +30,4 @@ var ext2 = {
 };
 
 ScratchExtensions.register("ブロック群のタイトル", descriptor2, ext2);
+})({});
