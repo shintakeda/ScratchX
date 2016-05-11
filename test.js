@@ -15,13 +15,13 @@ ScratchExtensions.register("ブロック群のタイトル", descriptor, ext);
 
 var descriptor2 = {
   "blocks": [
-    [" ", "%s とアラートする", "say", "こんにちは!"]
+    [" ", "%s とアラートする", "tell", "こんにちは!"]
   ],
   "menus": {}
 }
 
 var ext2 = {
-  say: function(message) {
+  tell: function(message) {
     window.alert(message);
   }
 };
