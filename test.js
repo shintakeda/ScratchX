@@ -3,7 +3,7 @@ var descriptor = {
     [" ", "%s と言う", "say", "こんにちは!"]
   ],
   "menus": {}
-}
+};
 
 
 var ext = {
