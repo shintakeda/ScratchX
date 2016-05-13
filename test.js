@@ -6,9 +6,11 @@ var descriptor = {
 }
 
 
-ext.say = function(message) {
+var ext = {
+  say: function(message) {
     window.alert(message);
-};
+  };
+}
 
 ScratchExtensions.register("ブロック群のタイトル", descriptor, ext);
 
