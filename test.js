@@ -13,7 +13,7 @@ var ext = {
       q: "tokyo"
     };
     $.get("http://localhost/test.html", p, function(data) {
-      callback(data);
+      callback(JSON.stringify(data));
     });
   },
   tell: function(t){
