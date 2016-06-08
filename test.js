@@ -12,7 +12,7 @@ var ext = {
     $.ajax({
           url: 'http://192.168.1.3:1880/temp',
           type:'GET',
-          dataType: 'json',
+          dataType: 'html',
           success: function(data) {
               callback(JSON.stringify(data));
           },
