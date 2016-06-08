@@ -9,24 +9,28 @@ var descriptor = {
 
 var ext = {
   temp: function(ip, callback) {
-    var p = {
-      q: "tokyo"
-    };
-    $.get("http://localhost/test.html", p, function(data) {
-      callback(JSON.stringify(data));
+    $.ajax({
+//          url: 'http://' + ip + ':1880/temp',
+          url:'http://localhost/test.html',
+          type:'GET',
+          dataType: 'jsonp',
+          success: function(data) {
+              callback(JSON.stringify(data));
+          },
+          error:function(data){
+              callback(JSON.stringify(data));
+          }
     });
   },
   tell: function(t){
     window.alert(t);
   },
   temp_of_tokyo:function(callback) {
-
     var param = {
       q: "tokyo",
       appid: "ddd98c6a715c25fd4a3b45e64c34bb10",
       units: "metric"
     };
-
     // 気象情報 API にアクセス
     $.get("http://api.openweathermap.org/data/2.5/weather", param, function(data) {
       callback(data.main.temp);
