@@ -11,8 +11,7 @@ var ext = {
   temp: function(ip, callback) {
     $.ajax({
           url: 'http://192.168.1.3:1880/temp',
-          type:'GET',
-          dataType: 'html',
+          dataType: 'text',
           success: function(data) {
               callback(JSON.stringify(data));
           },
