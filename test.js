@@ -12,7 +12,7 @@ var ext = {
     $.ajax({
           url: 'http://' + ip + ':1880/temp',
           type:'GET',
-          dataType: 'jsonp',
+          dataType: 'json',
           success: function(data) {
               callback(JSON.stringify(data));
           },
