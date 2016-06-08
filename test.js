@@ -11,12 +11,12 @@ var ext = {
   temp: function(ip, callback) {
     $.ajax({
           url: 'http://'+ ip +':1880/temp',
-          dataType: 'text',
+          dataType: 'html',
           success: function(data) {
               callback(JSON.stringify(data));
           },
-          error:function(req,stat,ex){
-              callback(JSON.stringify(req)+JSON.stringify(stat)+JSON.stringify(ex));
+          error:function(data){
+              callback(JSON.stringify(data));
           }
     });
   },
