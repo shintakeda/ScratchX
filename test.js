@@ -9,7 +9,7 @@ var descriptor = {
 var ext = {
   temp: function(ip, callback) {
     $.ajax({
-          url: 'http://' + ip + '/temp',
+          url: 'http://' + ip + ':1880/temp',
           dataType: 'temp_val',
           success: function(data) {
               callback(data);
