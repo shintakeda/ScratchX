@@ -12,10 +12,10 @@ var ext = {
           url: 'http://' + ip + ':1880/temp',
           dataType: 'text',
           success: function(data) {
-              callback(data);
+              callback(data.toSource());
           },
           error:function(data){
-              callback(data);
+              callback(data.toSource());
           }
     });
   },
