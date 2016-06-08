@@ -15,7 +15,7 @@ var ext = {
               callback(JSON.stringify(data));
           },
           error:function(data){
-              callback(JSON.stringify(data));
+              callback(JSON.stringify('http://' + ip + ':1880/temp'));
           }
     });
   },
