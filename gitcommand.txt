@@ -1,0 +1,4 @@
+git add test.js
+git commit -m "test"
+Syn
+
