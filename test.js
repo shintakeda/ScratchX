@@ -1,14 +1,20 @@
 var descriptor = {
   "blocks": [
-    [" ", "%s と言う", "say", "こんにちは!"],
+    ["R", "%s の温度は？", "temp", "192.168.1.3"],
     [" ", "%s と伝える", "tell", "test"]
   ],
   "menus": {}
 };
 
 var ext = {
-  say: function(message) {
-    window.alert(message);
+  temp: function(ip, callback) {
+    $.ajax({
+          url: 'http://' + ip + '/temp',
+          dataType: 'temp_val',
+          success: function(data) {
+              callback(data);
+          }
+    });
   },
   tell: function(t){
     window.alert(t);
