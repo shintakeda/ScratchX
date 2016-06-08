@@ -14,10 +14,10 @@ var ext = {
           type:'GET',
           dataType: 'jsonp',
           success: function(data) {
-              callback(data);
+              callback(JSON.stringify(data));
           },
           error:function(data){
-              callback(data);
+              callback(JSON.stringify(data));
           }
     });
   },
