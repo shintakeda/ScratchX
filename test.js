@@ -15,6 +15,7 @@ var ext = {
               callback(data);
           },
           error:function(data){
+              window.alert(url);
               callback("error");
           }
     });
