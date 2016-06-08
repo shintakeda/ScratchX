@@ -9,14 +9,10 @@ var descriptor = {
 
 var ext = {
   temp: function(ip, callback) {
-    var param = {
-      q: "tokyo",
-      appid: "ddd98c6a715c25fd4a3b45e64c34bb10",
-      units: "metric"
+    var p = {
+      q: "tokyo"
     };
-
-    // 気象情報 API にアクセス
-    $.get("http://localhost/test.html", param, function(data) {
+    $.get("http://localhost/test.html", p, function(data) {
       callback(data);
     });
   },
