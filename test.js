@@ -8,14 +8,15 @@ var descriptor = {
 
 var ext = {
   temp: function(ip, callback) {
+    var acurl = 'http://' + ip + ':1880/temp'
+    window.alert(acurl);
     $.ajax({
-          url: 'http://' + ip + ':1880/temp',
+          url: acurl,
           dataType: 'html',
           success: function(data) {
               callback(data);
           },
           error:function(data){
-              window.alert(url);
               callback("error");
           }
     });
