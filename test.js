@@ -8,9 +8,10 @@ var descriptor = {
 };
 
 var ext = {
+/*
   temp: function(ip, callback) {
     $.ajax({
-//          url: 'http://' + ip + ':1880/temp',
+          url: 'http://' + ip + ':1880/temp',
           url:'http://localhost/test.html',
           type:'GET',
           dataType: 'text',
@@ -20,6 +21,13 @@ var ext = {
           error:function(data){
               callback(JSON.stringify(data));
           }
+    });
+  },
+*/
+  temp:function(ip,callback) {
+    var param = {};
+    $.get('http://' + ip + ':1880/temp', param, function(data) {
+      callback(data);
     });
   },
   tell: function(t){
