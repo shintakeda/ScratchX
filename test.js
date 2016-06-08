@@ -10,15 +10,14 @@ var descriptor = {
 var ext = {
   temp: function(ip, callback) {
     $.ajax({
-//          url: 'http://' + ip + ':1880/temp',
-          url:'http://localhost/test.html',
+          url: 'http://' + ip + ':1880/temp',
           type:'GET',
           dataType: 'jsonp',
           success: function(data) {
-              callback(JSON.stringify(data));
+              callback(data);
           },
           error:function(data){
-              callback(JSON.stringify(data));
+              callback(data);
           }
     });
   },
