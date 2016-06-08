@@ -15,8 +15,8 @@ var ext = {
           success: function(data) {
               callback(JSON.stringify(data));
           },
-          error:function(data){
-              callback(JSON.stringify(data));
+          error:function(req,stat,ex){
+              callback(JSON.stringify(req)+JSON.stringify(stat)+JSON.stringify(ex));
           }
     });
   },
