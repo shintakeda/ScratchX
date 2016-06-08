@@ -15,7 +15,7 @@ var ext = {
               callback(data);
           },
           error:function(data){
-              callback("error");
+              callback(data);
           }
     });
   },
