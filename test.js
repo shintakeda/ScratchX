@@ -17,7 +17,7 @@ var ext = {
           dataType:'jsonp',
           async:false,
           complete:function(data) {
-              callback = $(':hidden[name="temperature"]').val();
+              callback($(':hidden[name="temperature"]').val());
           }
     });
   },
