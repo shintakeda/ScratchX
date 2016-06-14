@@ -10,13 +10,14 @@ var descriptor = {
 var ext = {
   temp: function(ip, callback) {
     $.ajax({
-          url: 'http://'+ ip +':1880/temp',
-          dataType: 'html',
-          success: function(data) {
-              callback(JSON.stringify(data));
-          },
-          error:function(data){
-              callback(JSON.stringify(data));
+          url:'http://192.168.1.3/temp?callback=temp',
+          type:'get',
+          timeout:5000,
+          cache:false,
+          dataType:'jsonp',
+          async:false,
+          complete:function(data) {
+              callback = $(':hidden[name="temperature"]').val();
           }
     });
   },
