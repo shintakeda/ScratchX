@@ -50,7 +50,7 @@
   };
 
   /* temperature */
-  ext.temp = function(dis) {
+  ext.temp = function(dis, callback) {
     $.ajax({
           url:'https://us.wio.seeed.io/v1/node/GroveTempA0/temp?access_token='+token,
           type:'GET',
