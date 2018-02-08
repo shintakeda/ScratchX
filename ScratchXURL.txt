@@ -1,1 +1,5 @@
 http://shintakeda.github.io/ScratchX/test.js
+
+http://shintakeda.github.io/ScratchX/sensortag_c1.js
+
+http://shintakeda.github.io/ScratchX/sensortag_demo.js
