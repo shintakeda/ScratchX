@@ -58,11 +58,11 @@
           dataType:'json',
           success:function(data){
               console.log(data.temperature);
-              callback(data.temperature);
+              return(data.temperature);
           },
               error:function(){
               console.log("temp error");
-              callback("null");
+              return("null");
           }
     });
   };
