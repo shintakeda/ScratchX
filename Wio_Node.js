@@ -57,6 +57,7 @@
           timeout:5000,
           dataType:'json',
           success:function(data){
+              console.log("temp ok");
               callback(data.temperature);
           },
               error:function(){
