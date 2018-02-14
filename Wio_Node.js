@@ -78,19 +78,19 @@
               if($('hidden[name=gx]').length){
                   $('hidden[name=gx]').val(data.gx);
               }else{
-                  var inputgx = '<input type="hidden" name="gx" value=">' + data.gx + '">';
+                  var inputgx = '<input type="hidden" name="gx" value="' + data.gx + '">';
                   $(document.body).append(inputgx);
               }
               if($('hidden[name=gy]').length){
                   $('hidden[name=gy]').val(data.gy);
               }else{
-                  var inputgy = '<input type="hidden" name="gy" value=">' + data.gy + '">';
+                  var inputgy = '<input type="hidden" name="gy" value="' + data.gy + '">';
                   $(document.body).append(inputgy);
               }
               if($('hidden[name=gz]').length){
                   $('hidden[name=gz]').val(data.gz);
               }else{
-                  var inputgz = '<input type="hidden" name="gz" value=">' + data.gz + '">';
+                  var inputgz = '<input type="hidden" name="gz" value="' + data.gz + '">';
                   $(document.body).append(inputgz);
               }
               callback('');
