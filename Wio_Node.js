@@ -70,7 +70,7 @@
   /* Gyrol */
   ext.gyrol = function(callback) {
     $.ajax({
-          url:'https://us.wio.seeed.io/v1/node/GroveGyrolTG3200I2C0/gyro?access_token='+token2,
+          url:'https://us.wio.seeed.io/v1/node/GroveGyroITG3200I2C0/gyro?access_token='+token2,
           type:'GET',
           timeout:5000,
           dataType:'json',
