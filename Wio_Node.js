@@ -7,6 +7,7 @@
   };
 
   var token = '6f0c32510e55c54b2a3220c28346a4e5';
+  var token2 = 'b63d4b190cb2297e2932b41d0137feb7';
 
   /* 4-Digit Display */
   ext.fdd = function(place, num) {
@@ -66,12 +67,63 @@
     });
   };
 
+  /* Gyrol */
+  ext.gyx = function(callback) {
+    $.ajax({
+          url:'https://us.wio.seeed.io/v1/node/GroveGyroITG3200I2C0/gyro?access_token='+token2,
+          type:'GET',
+          timeout:5000,
+          dataType:'json',
+          success:function(data){
+              callback(data.gx);
+          },
+              error:function(){
+              console.log("gyrox error");
+              callback("null");
+          }
+    });
+  };
+  ext.gyy = function(callback) {
+    $.ajax({
+          url:'https://us.wio.seeed.io/v1/node/GroveGyroITG3200I2C0/gyro?access_token='+token2,
+          type:'GET',
+          timeout:5000,
+          dataType:'json',
+          success:function(data){
+              callback(data.gy);
+          },
+              error:function(){
+              console.log("gyroy error");
+              callback("null");
+          }
+    });
+  };
+
+  ext.gyz = function(callback) {
+    $.ajax({
+          url:'https://us.wio.seeed.io/v1/node/GroveGyroITG3200I2C0/gyro?access_token='+token2,
+          type:'GET',
+          timeout:5000,
+          dataType:'json',
+          success:function(data){
+              callback(data.gz);
+          },
+              error:function(){
+              console.log("gyrox error");
+              callback("null");
+          }
+    });
+  };
+
 var descriptor = {
   "blocks": [
     /* 4-Digit Display */
     [" ", "数字表示機の%n 番目に%n を表示する", "fdd", "",""],
     [" ", "数字表示機の:を %m.display", "fddc", "表示する"],
-    ["R", "気温", "temp"]
+    ["R", "気温", "temp"],
+    ["R", "x座標の角速度", "gyx"],
+    ["R", "y座標の角速度", "gyy"],
+    ["R", "z座標の角速度", "gyz"]
   ],
   "menus": {
      display:["表示する","表示しない"]
