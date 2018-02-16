@@ -8,6 +8,7 @@
 
   var token = '6f0c32510e55c54b2a3220c28346a4e5';
   var token2 = 'b63d4b190cb2297e2932b41d0137feb7';
+  var token3 = '67864ea7e8e2a3dbe3228f5577eb8634'
 
   /* 4-Digit Display */
   ext.fdd = function(place, num) {
@@ -132,6 +133,40 @@
     });
   };
 
+  /* Button */
+  ext.button = function(callback) {
+    $.ajax({
+          url:'https://us.wio.seeed.io/v1/node/GroveButtonD0/pressed?access_token='+token3,
+          type:'GET',
+          timeout:5000,
+          dataType:'json',
+          success:function(data){
+              callback(data.pressed);
+          },
+              error:function(){
+              console.log("button error");
+              callback("null");
+          }
+    });
+  };
+
+  /* Sound */
+  ext.sound = function(callback) {
+    $.ajax({
+          url:'https://us.wio.seeed.io/v1/node/GroveSoundA0/sound_level?access_token='+token3,
+          type:'GET',
+          timeout:5000,
+          dataType:'json',
+          success:function(data){
+              callback(data.sound_level);
+          },
+              error:function(){
+              console.log("sound error");
+              callback("null");
+          }
+    });
+  };
+
 var descriptor = {
   "blocks": [
     /* 4-Digit Display */
@@ -141,7 +176,9 @@ var descriptor = {
     ["R", "x座標の角速度", "gyx"],
     ["R", "y座標の角速度", "gyy"],
     ["R", "z座標の角速度", "gyz"],
-    ["R", "距離", "rang"]
+    ["R", "距離", "rang"],
+    ["R", "ボタン", "button"],
+    
   ],
   "menus": {
      display:["表示する","表示しない"]
