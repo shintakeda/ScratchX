@@ -115,6 +115,22 @@
     });
   };
 
+  /* UltraRanger */
+  ext.rang = function(callback) {
+    $.ajax({
+          url:'https://us.wio.seeed.io/v1/node/GroveUltraRangerD1/range_in_cm?access_token='+token2,
+          type:'GET',
+          timeout:5000,
+          dataType:'json',
+          success:function(data){
+              callback(data.range_in_cm);
+          },
+              error:function(){
+              callback("null");
+          }
+    });
+  };
+
 var descriptor = {
   "blocks": [
     /* 4-Digit Display */
@@ -123,7 +139,8 @@ var descriptor = {
     ["R", "気温", "temp"],
     ["R", "x座標の角速度", "gyx"],
     ["R", "y座標の角速度", "gyy"],
-    ["R", "z座標の角速度", "gyz"]
+    ["R", "z座標の角速度", "gyz"],
+    ["R", "距離", "rang"]
   ],
   "menus": {
      display:["表示する","表示しない"]
