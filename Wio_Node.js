@@ -126,6 +126,7 @@
               callback(data.range_in_cm);
           },
               error:function(){
+              console.log("rang error");
               callback("null");
           }
     });
