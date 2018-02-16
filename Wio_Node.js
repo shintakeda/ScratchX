@@ -123,7 +123,7 @@
           timeout:5000,
           dataType:'json',
           success:function(data){
-              callback(data.range_in_cm);
+              callback(data.range_cm);
           },
               error:function(){
               console.log("rang error");
