@@ -178,7 +178,7 @@ var descriptor = {
     ["R", "z座標の角速度", "gyz"],
     ["R", "距離", "rang"],
     ["R", "ボタン", "button"],
-    
+    ["R", "音量", "sound"]
   ],
   "menus": {
      display:["表示する","表示しない"]
